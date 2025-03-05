@@ -2,17 +2,20 @@ using System;
 
 class Program
 {
+    // A＠B = (A+B) * (A-B)를 계산하는 함수 (long 타입 사용)
+    static long CustomOperation(long A, long B)
+    {
+        return (A + B) * (A - B);
+    }
+
     static void Main()
     {
-        // 사용자 입력 받기
+        // 입력 받기
         string[] input = Console.ReadLine().Split();
-        int A = int.Parse(input[0]);
-        int B = int.Parse(input[1]);
+        long A = long.Parse(input[0]); // long 타입으로 변경
+        long B = long.Parse(input[1]); // long 타입으로 변경
 
-        // 연산 수행
-        int result = (A + B) * (A - B);
-
-        // 결과 출력
-        Console.WriteLine(result);
+        // 함수 호출 및 결과 출력
+        Console.WriteLine(CustomOperation(A, B));
     }
 }
